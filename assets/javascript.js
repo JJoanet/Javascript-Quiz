@@ -45,8 +45,8 @@ function resetButton(){
 function End(){
     if(playerScore > highScore){
         var initials = prompt("High Score! Enter your initials.")
-        var userData = ["Player: " + initials + " Score: " + playerScore]
-        highScore = playerScore
+        highScore = playerScore;
+        var userData = ["Player: " + initials + " Score: " + highScore]
     }
     question.textContent = "Quiz Over!"
     for(i = 0; i < answers.length; i++) {

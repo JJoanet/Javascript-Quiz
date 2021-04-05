@@ -1,0 +1,25 @@
+header > h1 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+main > h1 {
+    display: flex;
+    justify-content: center;
+}
+
+main > ul {
+    list-style-type: none;
+    display: block;
+    margin-left: 46%;
+    width: 100%;
+}
+
+p{
+    border-top: black 2px solid;
+}
