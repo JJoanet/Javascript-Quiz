@@ -20,27 +20,10 @@ function scoreUpdate(){
     score.textContent = playerScore.toString();
 }
 
-
 for(i = 0; i < answers.length; i++){
     answers[i].style.display = "none";
 }
-reset.style.display = "none";
-reset.addEventListener("click", resetButton);
 begin.addEventListener("click", setOne);
-
-function resetButton(){
-    playerScore = 0;
-    scoreUpdate();
-    if(begin.dataset.state = "hidden"){
-        begin.dataset.state = "show";
-        begin.style.display = "block";
-        begin.textContent = "Play Again!";
-    }
-    if(reset.dataset.state = "show"){
-        reset.dataset.state = "hidden";
-        reset.style.display = "none";
-    }
-}
 
 function End(){
     if(playerScore > highScore){
@@ -51,13 +34,9 @@ function End(){
     question.textContent = "Quiz Over!"
     for(i = 0; i < answers.length; i++) {
         answers[i].dataset.state = "hidden";
-        answers[i].style.display = "none"
+        answers[i].style.display = "none";
     }
-    if(reset.dataset.state = "hidden"){
-        reset.dataset.state = "show";
-        reset.style.display = "block";
-        reset.textContent = "Reset!";
-    }
+    result.textContent = "Please refresh to play again!";
 }
 
 function setOne(event){
@@ -82,16 +61,15 @@ function setOne(event){
             var selected = event.target;
             if(selected.innerHTML === correctOne){
                 playerScore += 1;
+                console.log(playerScore);
                 result.textContent = "Correct!";
                 scoreUpdate();
-                setTwo();
-                return;
             } else {
                 //this is also where time reduction will go.
                 result.textContent = "Incorrect!";
-                setTwo();
                 return;
             }
+            setTwo();
         });
     }
     
@@ -109,16 +87,15 @@ function setTwo(){
             var selected = event.target;
             if(selected.innerHTML === correctTwo){
                 playerScore += 1;
+                console.log(playerScore);
                 result.textContent = "Correct!";
                 scoreUpdate();
-                setThree();
-                return;
             } else {
                 //this is also where time reduction will go.
-                result.textContent = "Incorrect!"
-                setThree();
+                result.textContent = "Incorrect!";
                 return;
             }
+            setThree();
         });
     }
     
@@ -136,16 +113,15 @@ function setThree(){
             var selected = event.target;
             if(selected.innerHTML === correctThree){
                 playerScore += 1;
+                console.log(playerScore);
                 result.textContent = "Correct!";
                 scoreUpdate();
-                setFour();
-                return;
             } else {
                 //this is also where time reduction will go.
                 result.textContent = "Incorrect!";
-                setFour()
                 return;
             }
+            setFour();
         });
     }
     
@@ -163,16 +139,15 @@ function setFour(){
             var selected = event.target;
             if(selected.innerHTML === correctFour){
                 playerScore += 1;
+                console.log(playerScore);
                 result.textContent = "Correct!";
                 scoreUpdate();
-                setFive();
-                return;
             } else {
                 //this is also where time reduction will go.
                 result.textContent = "Incorrect!";
-                setFive();
                 return;
             }
+            setFive();
         });
     }
     
@@ -190,16 +165,15 @@ function setFive(){
             var selected = event.target;
             if(selected.innerHTML === correctFive){
                 playerScore += 1;
+                console.log(playerScore);
                 result.textContent = "Correct!";
                 scoreUpdate();
-                setSix();
-                return;
             } else {
                 //this is also where time reduction will go.
                 result.textContent = "Incorrect!";
-                setSix();
                 return;
             }
+            setSix();
         });
     }
     
@@ -217,16 +191,15 @@ function setSix(){
             var selected = event.target;
             if(selected.innerHTML === correctSix){
                 playerScore += 1;
+                console.log(playerScore);
                 result.textContent = "Correct!";
                 scoreUpdate();
-                setSeven();
-                return;
             } else {
                 //this is also where time reduction will go.
                 result.textContent = "Incorrect!";
-                setSeven();
                 return;
             }
+            setSeven();
         });
     }
     
@@ -244,16 +217,15 @@ function setSeven(){
             var selected = event.target;
             if(selected.innerHTML === correctSeven){
                 playerScore += 1;
+                console.log(playerScore);
                 result.textContent = "Correct!";
                 scoreUpdate();
-                setEight();
-                return;
             } else {
                 //this is also where time reduction will go.
                 result.textContent = "Incorrect!";
-                setEight();
                 return;
             }
+            setEight();
         });
     }
     
@@ -271,16 +243,15 @@ function setEight(){
             var selected = event.target;
             if(selected.innerHTML === correctEight){
                 playerScore += 1;
+                console.log(playerScore);
                 result.textContent = "Correct!";
                 scoreUpdate();
-                End();
-                return;
             } else {
                 //this is also where time reduction will go.
                 result.textContent = "Incorrect!";
-                End();
                 return;
             }
+            End();
         });
     }
     
