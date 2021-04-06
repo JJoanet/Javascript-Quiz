@@ -9,12 +9,36 @@ var answerClass = document.querySelector(".answers")
 var begin = document.querySelector("#Begin")
 var reset = document.querySelector("#Reset")
 var result = document.querySelector("#result")
-
-var highScoreText = document.querySelector("#highScoreText")
+var timeLeft;
+var timer;
+var userData = [];
 
 var playerScore = 0;
 var highScore = 0;
 
+var sec = 60;
+function timeStart() {
+    function startTimer(){
+        console.log('timer suppose to go')
+            timer = setInterval(function(){
+            sec--;
+            time.innerHTML= sec.toString();
+            if (sec <= 0) {
+                console.log("End")
+                End();
+                clearInterval(timer);
+            }
+        }, 1000);
+    }
+    startTimer();
+};
+
+function incorrect(){
+    if(result.textContent == "Incorrect!"){
+        sec -= 5;
+        time.innerHTML= sec.toString();
+    }
+}
 var answers = [ans1, ans2, ans3, ans4]
 function scoreUpdate(){
     score.textContent = playerScore.toString();
@@ -26,10 +50,14 @@ for(i = 0; i < answers.length; i++){
 begin.addEventListener("click", setOne);
 
 function End(){
+    console.log("TrueEnd")
+    clearInterval(timer);
     if(playerScore > highScore){
         var initials = prompt("High Score! Enter your initials.")
         highScore = playerScore;
-        var userData = ["Player: " + initials + " Score: " + highScore]
+        userData.push("Initials: " + initials,"High Score: " + highScore, "Remaining Time: " + sec);
+        localStorage.setItem("userData", JSON.stringify(userData));
+        console.log(userData);
     }
     question.textContent = "Quiz Over!"
     for(i = 0; i < answers.length; i++) {
@@ -40,6 +68,7 @@ function End(){
 }
 
 function setOne(event){
+    timeStart();
     var questOne = ["js", "script", "javascript", "scripting"];
     var correctOne = "script";
     event.stopPropagation();
@@ -69,11 +98,13 @@ function setOne(event){
                 result.textContent = "Incorrect!";
                 return;
             }
+            incorrect();
             setTwo();
         });
     }
     
 }
+
 function setTwo(){
     var questTwo = ["The body section", "Both the head section and the body section are correct", "The head section", "After the footer"];
     var correctTwo = "The body section";
@@ -95,6 +126,7 @@ function setTwo(){
                 result.textContent = "Incorrect!";
                 return;
             }
+            incorrect();
             setThree();
         });
     }
@@ -121,6 +153,7 @@ function setThree(){
                 result.textContent = "Incorrect!";
                 return;
             }
+            incorrect();
             setFour();
         });
     }
@@ -147,6 +180,7 @@ function setFour(){
                 result.textContent = "Incorrect!";
                 return;
             }
+            incorrect();
             setFive();
         });
     }
@@ -173,6 +207,7 @@ function setFive(){
                 result.textContent = "Incorrect!";
                 return;
             }
+            incorrect();
             setSix();
         });
     }
@@ -199,6 +234,7 @@ function setSix(){
                 result.textContent = "Incorrect!";
                 return;
             }
+            incorrect();
             setSeven();
         });
     }
@@ -225,6 +261,7 @@ function setSeven(){
                 result.textContent = "Incorrect!";
                 return;
             }
+            incorrect();
             setEight();
         });
     }
@@ -251,8 +288,9 @@ function setEight(){
                 result.textContent = "Incorrect!";
                 return;
             }
+            incorrect();
             End();
         });
     }
     
-}             
+}           

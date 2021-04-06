@@ -1,0 +1,25 @@
+body{
+    background-color: lightgray;
+}
+h1, p{
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    color: blue;
+}
+
+a{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+button{
+    padding-left: 50px;
+    padding-right: 50px;
+    color: blue;
+    background-color: lightblue;
+    border: blue solid 2px;
+    font-weight: bolder;
+}
