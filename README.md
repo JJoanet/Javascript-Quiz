@@ -15,4 +15,6 @@ My next hurdle was figuring out how to trigger the next function without having 
 Then I had to figure out how to create a setinterval timer to track a global timer, I have yet to figure out how to reduce the remaining seconds with wrong answers, every iteration of this either exponentially reduced time, or didn't work.  
 Finally I had to track highscores only if the current score is greater than the users highscore, and store it locally for persistance, and to pull in the highscore page.
 
-Challenging to say the least, I'll keep working on getting the interval to work properly.
+Finally I refractored the entire javascript to improve functionality and reduce code redundancy.
+
+screenshot in assets/imgs
