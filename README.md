@@ -17,4 +17,4 @@ Finally I had to track highscores only if the current score is greater than the 
 
 Finally I refractored the entire javascript to improve functionality and reduce code redundancy.
 
-screenshot in assets/imgs
+![screenshot](./assets/imgs/capture.png)
