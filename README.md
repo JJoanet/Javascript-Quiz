@@ -1,59 +1,25 @@
-# Homework4
-This project was brutal. 
-
-HTML:
-index.html is my quiz page.
-highscore.html is my highscore page.
-
-highscore.css is styling dedicated to highscore.html
-style.css is style dedicated to index.html
-
-highscore.js exists to pull from local storage and update the current highscore.
-
-javascript.js was very difficult. Once I figured out how to dynamically update my questions and answers, things improved. 
-My next hurdle was figuring out how to trigger the next function without having previous question sets running at the same time.
-Then I had to figure out how to create a setinterval timer to track a global timer, I have yet to figure out how to reduce the remaining seconds with wrong answers, every iteration of this either exponentially reduced time, or didn't work.  
-Finally I had to track highscores only if the current score is greater than the users highscore, and store it locally for persistance, and to pull in the highscore page.
-
-Finally I refractored the entire javascript to improve functionality and reduce code redundancy.
-
-![screenshot](./assets/imgs/Capture.PNG)
-
 ## Live Deploy
+https://vygoth.github.io/Javascript-Quiz/index.html
 
-# ReadmeGenerator
+# Javascript Quiz
 
 # Contact
 Vygoth
 JeremyJoanet@Protonmail.com
 
 ## Description
-This Application allows users to create README files on the fly!
+This application was created as a little javascript quiz, it features a timer that decrements when a wrong answer is logged, and a score that increments when a correct answer is logged. After the quiz is complete, it will prompt a user for their initials if the user's current score is the user's high score. The user's initials, score and time remaining are then logged in the high score section.
 
 ## Table of Contents
 - [Usage](#Usage)
-- [Installation](#Dependancies)
-- [Testing](#Testing)
 - [Credits](#Credits)
-- [License](#License)
-- [Contributing](#Contributing)
-- [License Information](#LicenseInfo)
 - [Screenshot](#Screenshot)
 
 ## Usage
-To begin this application, please type node index.js with node installed.
-
-## Dependancies
-npm i
-
-## Testing
-N/A
+This application has a live deploy link located at the top of this README.
 
 ## Credits
-Zach Duty, Matt Reisdorf
-
-## Contributing
-N/A
+Tom Simion
 
 ## Screenshot
-![Screenshot](./assets/img/screenshot.png)
+![screenshot](./assets/imgs/Capture.PNG)
